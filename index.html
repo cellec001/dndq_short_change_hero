@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The heavy - Short Change Hero</title>
+    <link rel="stylesheet" href="./app.css" />
+	<link rel="stylesheet" href="./nes.css" />
+  </head>
+<! –– audio control is sticky ––>
+  <body>
+  <div class="header" id="myHeader" style="text-align:center">
+  <audio id="player" controls>
+  <source src="Short Change Hero.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+  </audio>
+  </div>
+
+<! –– album cover ––>
+<div class="nes-container is-rounded is-dark" id="album" style="text-align:center"> 
+
+  <a href = https://www.theheavy.co.uk/> <img src="the heavy.jpg" alt="The heavy" width="200" height="200"> </a>
+
+
+<h2>The Heavy - Short Change Hero</h2>
+
+
+
+
+</div>
+
+  
+  <div id="drag-n-drop-quiz" ></div>
+    <script>
+      let questions = [];
+      questions[0] = [
+        '',
+        {
+          id: 1,
+          text: 'I can´t see where you comin´ from',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'But I know just what you runnin´ from',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'And what matters ain´t the "who´s baddest" but the',
+          dragOrder: 1,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'Ones who stop you fallin´ from your ladder, baby',
+          dragOrder: 4,
+          dropOrder: 4, // correct order after drop
+        },
+		
+        
+      ];
+       questions[1] = [
+         '',
+        {
+          id: 1,
+          text: 'Feel like you feelin´ now',
+          dragOrder: 3,
+          dropOrder: 1, // correct order after drop
+        },
+		{
+          id: 2,
+          text: 'And doin´ things just to please your crowd',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+		{
+          id: 3,
+          text: 'When I love you like the way I love you',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'And I suffer, but I ain´t gonna cut you ´cause',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+		
+	questions[2] = [
+         '',
+        {
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'This ain´t no place for no better man',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+		{
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'To call home',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+        },
+		];
+		
+		questions[3] = [
+         '',
+        {
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'This ain´t no place for no better man',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+		{
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'To call home',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+        },
+		];
+		
+		questions[4] = [
+         '',
+        {
+          id: 1,
+          text: 'Every time I close my eyes',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'I think, I think ´bout you inside',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'And your mother, givin´ up on askin´ why',
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 4,
+          text: 'Why you lie, and you cheat, and you try to make a fool outta she...',
+          dragOrder: 3,
+          dropOrder: 4, // correct order after drop
+        },
+		
+      ];
+	  questions[5] = [
+        '',
+        {
+          id: 1,
+          text: 'I can´t see where you comin´ from',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'But I know just what you runnin´ from',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'And what matters ain´t the "who´s baddest" but the',
+          dragOrder: 1,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'Ones who stop you fallin´ from your ladder, cause',
+          dragOrder: 4,
+          dropOrder: 4, // correct order after drop
+        },
+      ];
+	 questions[6] = [
+         '',
+        {
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'This ain´t no place for no better man',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+		{
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'To call home',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+        },
+      ];
+	  questions[7] = [
+         '',
+        {
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'This ain´t no place for no better man',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+		{
+          id: 1,
+          text: 'This ain´t no place for no hero',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'To call home',
+          dragOrder: 2,
+          dropOrder: 4, // correct order after drop
+        },
+      ];
+	  
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
